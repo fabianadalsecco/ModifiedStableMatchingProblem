@@ -1,0 +1,18 @@
+{
+    "proposers_preferences_1": {
+        "1": ["B", "A"],
+        "2": ["B", "A"]
+    },
+    "proposers_preferences_2": {
+        "1": ["B", "A"],
+        "2": ["B", "A"]
+    },
+    "receivers_preferences_1": {
+        "A": ["1", "2"],
+        "B": ["1", "2"]
+    },
+    "receivers_preferences_2": {
+        "A": ["1", "2"],
+        "B": ["2", "1"]
+    }
+}
