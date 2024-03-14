@@ -1,6 +1,6 @@
 import numpy as np
 
-def construct_partial_order_matrix(receivers_preferences_1, receivers_preferences_2 = None):
+def construct_partial_order_matrices(receivers_preferences_1, receivers_preferences_2 = None):
     # If there is no modification on the receivers preferences lists
     if receivers_preferences_2 == None:
         receivers_preferences_2 = receivers_preferences_1

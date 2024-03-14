@@ -26,8 +26,8 @@ receivers_opt_matching = receivers_matching.solve()
 print(f"Optimal stable matching for the receivers in instance (0,0) by matching.games library in Python: \n {receivers_opt_matching}\n")
 
 # Original instance: proposers_preferences and receivers_preferences_1
-partial_order_matrices_receivers_1 = partial_orders.construct_partial_order_matrix(receivers_preferences_1)
-partial_order_matrices_proposers_1 = partial_orders.construct_partial_order_matrix(proposers_preferences_1)
+partial_order_matrices_receivers_1 = partial_orders.construct_partial_order_matrices(receivers_preferences_1)
+partial_order_matrices_proposers_1 = partial_orders.construct_partial_order_matrices(proposers_preferences_1)
 
 print(f"Optimal stable matching for the proposers in instance (0,0):")
 stable_matching_1 = adaptation_gale_shapley.adaptation_gale_shapley_partial(proposers_preferences_1, partial_order_matrices_receivers_1)
@@ -39,7 +39,8 @@ stable_matching_all_partial_1_receivers = adaptation_gale_shapley.adaptation_gal
 
 # Combined instance: proposers_preferences and (receivers_preferences_1 + receivers_preferences_2)
 print(f"Optimal stable matching for the proposers in combined instance (0,n):")
-partial_order_matrices_receivers_12 = partial_orders.construct_partial_order_matrix(receivers_preferences_1, receivers_preferences_2)
+partial_order_matrices_receivers_12 = partial_orders.construct_partial_order_matrices(receivers_preferences_1,
+                                                                                      receivers_preferences_2)
 #print(f"\nPartial order matrices for the woman: \n{partial_order_matrices_receivers_12}\n")
 
 stable_matching_12 = adaptation_gale_shapley.adaptation_gale_shapley_partial(proposers_preferences_1, partial_order_matrices_receivers_12)

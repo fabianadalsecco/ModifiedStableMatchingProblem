@@ -114,15 +114,16 @@ def adaptation_gale_shapley_all_partial(proposers_partial_prefs, receivers_parti
 
         # If a proposer is rejected by all the receivers, quit the loop
         if not_found == 1:
-            print("A stable matching could not be found")
+            print("A matching could not be found")
             break
 
     # Stability check
     stability = check_stability(proposer_opt,all_proposers,all_receivers,proposers_partial_prefs,receivers_partial_prefs)
-    print(f" Optimal stable matching: {proposer_opt}")
     if stability == 0:
+        print(f" Optimal stable matching found: {proposer_opt}")
         print(f" This matching is stable.\n")
     else:
+        print(f" Stable matching found: {proposer_opt}")
         print(f" This matching is NOT stable.\n")
     return proposer_opt
 
@@ -137,7 +138,7 @@ def check_stability(matching, all_proposers, all_receivers, proposers_prefs, rec
                     receiver_prefs = receivers_prefs[receiver]
                     matching_proposer_index = all_proposers.index(get_key_from_value(matching,receiver))
                     if receiver_prefs[i, matching_proposer_index] == 1:
-                        unstable = 1
+                        stability = 1
     return stability
 
 def get_key_from_value(dic, value):
