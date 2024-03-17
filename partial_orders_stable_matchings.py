@@ -7,10 +7,10 @@ from matching.games import StableMarriage
 # File containing preferences lists
 filename = "Instance_n8.txt"
 
-# Read dictionaries from the file
+# Read preferences lists from the file
 all_dicts = create_dic.read_prefs_from_file(filename)
 
-# Separate the dictionaries
+# Separate the preferences lists
 proposers_preferences_1 = all_dicts["proposers_preferences_1"]
 proposers_preferences_2 = all_dicts["proposers_preferences_2"]
 receivers_preferences_1 = all_dicts["receivers_preferences_1"]
