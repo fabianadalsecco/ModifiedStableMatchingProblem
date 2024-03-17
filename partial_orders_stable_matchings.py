@@ -38,7 +38,7 @@ print(f"Optimal stable matching for the receivers in instance (0,0): ")
 stable_matching_all_partial_1_receivers = adaptation_gale_shapley.adaptation_gale_shapley_all_partial(partial_order_matrices_receivers_1, partial_order_matrices_proposers_1)
 
 # Combined instance: proposers_preferences and (receivers_preferences_1 + receivers_preferences_2)
-print(f"Optimal stable matching for the proposers in combined instance (0,n):")
+print(f"Optimal stable matching for the proposers in compound instance (0,n):")
 partial_order_matrices_receivers_12 = partial_orders.construct_partial_order_matrices(receivers_preferences_1,
                                                                                       receivers_preferences_2)
 #print(f"\nPartial order matrices for the woman: \n{partial_order_matrices_receivers_12}\n")
@@ -48,15 +48,15 @@ print(f" Partial:\n {stable_matching_12}")
 
 stable_matching_all_partial_12 = adaptation_gale_shapley.adaptation_gale_shapley_all_partial(partial_order_matrices_proposers_1, partial_order_matrices_receivers_12)
 
-print(f"Optimal stable matching for the receivers in combined instance (0,n):")
+print(f"Optimal stable matching for the receivers in compound instance (0,n):")
 stable_matching_all_partial_receivers = adaptation_gale_shapley.adaptation_gale_shapley_all_partial(partial_order_matrices_receivers_12, partial_order_matrices_proposers_1)
 
 '''
-# Combined instance: (proposers_preferences_1 + proposers_preferences_2) and (receivers_preferences_1 + receivers_preferences_2)
+# Compound instance: (proposers_preferences_1 + proposers_preferences_2) and (receivers_preferences_1 + receivers_preferences_2)
 partial_order_matrices_proposers_12 = partial_orders.construct_partial_order_matrix(proposers_preferences_1, proposers_preferences_2)
 stable_matching_all_partial = adaptation_gale_shapley.adaptation_gale_shapley_all_partial(partial_order_matrices_proposers_12, partial_order_matrices_receivers_12)
-#print(f"Optimal stable matching for the proposers in combined instance (n,n): \n All partial: {stable_matching_all_partial}")
-print(f"Optimal stable matching for the proposers in combined instance (0,n): \n All partial: {stable_matching_all_partial}")
+#print(f"Optimal stable matching for the proposers in compound instance (n,n): \n All partial: {stable_matching_all_partial}")
+print(f"Optimal stable matching for the proposers in compound instance (0,n): \n All partial: {stable_matching_all_partial}")
 
 
 '''
