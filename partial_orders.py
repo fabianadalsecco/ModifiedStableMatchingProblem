@@ -33,8 +33,10 @@ def construct_partial_order_matrices(receivers_preferences_1, receivers_preferen
 
 
 def count_positive_matrix(matrix):
+    # Define the relevance level of each receiver for a proposer
     count = 0
     positive_matrix = np.zeros(matrix.shape[0])
+    # For each receiver (row), count the number of positive values
     for i in range(matrix.shape[0]):
         for j in range(matrix.shape[1]):
             if matrix[i][j] == -1:
@@ -47,6 +49,7 @@ def count_positive_matrix(matrix):
 
 
 def choose_receiver(positive_matrix):
+    # Choose the receiver with the greatest relevance level
     max_value = max(positive_matrix)
     max_index = np.where(positive_matrix == max_value)[0][0]
     return max_index
